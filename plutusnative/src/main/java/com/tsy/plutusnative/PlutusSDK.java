@@ -33,6 +33,10 @@ public class PlutusSDK implements PlutusSDKHelper {
     private final static String TAG = PlutusSDK.class.getSimpleName();
     private MethodChannel methodChannel;
 
+    public PlutusSDK(FlutterEngine flutterEngine) {
+        methodChannel = new MethodChannel(flutterEngine.getDartExecutor(), "com.tsy.plutus");
+    }
+
     public PlutusSDK(Context context) {
         FlutterEngine flutterEngine = new FlutterEngine(context);
         flutterEngine.getDartExecutor().executeDartEntrypoint(
