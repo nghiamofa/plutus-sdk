@@ -10,6 +10,9 @@
 /.idea/assetWizardSettings.xml
 .DS_Store
 /build
+/build.gradle
 /captures
 .externalNativeBuild
 .cxx
+/app/google-services.json
+/app/build.gradle
