@@ -1,6 +1,6 @@
 package com.tsy.plutusnative.model;
 
-enum Status {
+public enum Status {
     AVAILABLE_TO_REQUEST,
     AVAILABLE_TO_UPLOAD_VIDEO,
     DEEPLY_PHONE_VERIFICATION_REQUIRED,

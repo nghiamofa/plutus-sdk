@@ -3,8 +3,12 @@ package com.tsy.plutusnative.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class UserInfoResult {
     @SerializedName("creditLimit")
@@ -134,5 +138,17 @@ public class UserInfoResult {
 
     public Bank getUserBankCard() {
         return userBankCard;
+    }
+
+    public Map<String, List<Double>> filterAvailableValues() {
+        Map<String, List<Double>> aCopiedOfValues = new HashMap<>(this.loanValues);
+
+        for(Iterator<String> iterator = aCopiedOfValues.keySet().iterator(); iterator.hasNext();) {
+            String key = iterator.next();
+            if(aCopiedOfValues.get(key) == null || aCopiedOfValues.get(key).isEmpty()) {
+                iterator.remove();
+            }
+        }
+        return aCopiedOfValues;
     }
 }
